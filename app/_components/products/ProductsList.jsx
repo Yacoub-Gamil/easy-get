@@ -1,4 +1,3 @@
-import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import Filter from "./Filter";
 import ProductCard from "./ProductCard";
 
@@ -11,25 +10,19 @@ async function ProductsList({ active }) {
   );
 
   return (
-    <div className=" p-4">
-      <div className=" flex flex-col gap-8">
+    <div className="p-4">
+      <div className=" flex flex-col gap-8 justify-center items-center">
         <h1 className=" text-center mt-[6rem] mb-[2rem] font-semibold uppercase text-[#2d3a4b] text-4xl">
           We make you awesome
         </h1>
-        <div className="flex items-center justify-between  max-w-[80%] bg-amber-200  mb-[4rem]">
-          <div className="relative cursor-pointer ">
-            <PiShoppingCartSimpleThin className=" text-2xl" />
-            <span className=" absolute -right-2 top-[-0.8rem] bg-red-600 text-white w-4 h-4 flex justify-center items-center rounded-full">
-              0
-            </span>
-          </div>
+        <div className=" mb-[4rem]">
           <Filter />
         </div>
       </div>
-
       <div className=" grid lg:grid-cols-4 lg:max-w-[80%] mx-auto place-items-center gap-[4rem] p-4">
         {productAfterFilter?.map((product) => (
           <ProductCard
+            active={productAfterFilter}
             key={product.id}
             id={product.id}
             title={product.title}

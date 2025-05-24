@@ -15,7 +15,7 @@ function Filter() {
   }
 
   return (
-    <div className=" flex gap-2  bg-stone-50 rounded-full justify-between ">
+    <div className=" flex bg-stone-50 rounded-full p-1 justify-between">
       <button
         className={`${
           aciveFilter === "all"
@@ -34,7 +34,7 @@ function Filter() {
         } py-2 px-6 rounded-2xl cursor-pointer capitalize `}
         onClick={() => handleFilter("women's-clothing")}
       >
-        women clothing
+        women
       </button>
 
       <button
@@ -45,7 +45,7 @@ function Filter() {
         } py-2 px-6 rounded-2xl cursor-pointer capitalize `}
         onClick={() => handleFilter("men's-clothing")}
       >
-        men clothing
+        men
       </button>
       <button
         className={`${
