@@ -1,12 +1,55 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import { useEffect, useRef, useState } from "react";
 import { CiCircleInfo, CiCirclePlus } from "react-icons/ci";
 
 function ProductCard({ id, image, title, price, description, active }) {
+  const router = useRouter();
+  const item = useRef(null);
+  const [isLeaving, setIsLeaving] = useState(false);
+
+  const handleNavigation = () => {
+    if (isLeaving) return;
+    setIsLeaving(true);
+
+    // Animate out
+    gsap.to(item.current, {
+      opacity: 0,
+      y: -150,
+      duration: 0.4,
+      onComplete: () => {
+        router.push(`/collections/${id}`);
+      },
+    });
+  };
+
+  useGSAP(() => {
+    gsap.fromTo(
+      item.current,
+      {
+        opacity: 0,
+        y: -50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+      }
+    );
+  }, []);
+
   return (
-    <div className=" relative">
+    <button
+      onClick={handleNavigation}
+      ref={item}
+      className=" relative  cursor-pointer "
+    >
       <div
         className={` group relative flex flex-col justify-center gap-4 h-[20rem] `}
       >
@@ -17,17 +60,6 @@ function ProductCard({ id, image, title, price, description, active }) {
             fill
             className=" rounded-lg object-contain"
           />
-
-          <div className=" w-full h-full transition-all duration-300 absolute top-0 group-hover:opacity-60 z-30 bg-stone-200 opacity-0 flex justify-center items-center"></div>
-
-          <div className=" flex justify-end gap-2 group-hover:left-[-1rem] top-[1rem] duration-300 left-[5rem] z-40 text-white absolute w-full text-[2.1rem]">
-            <Link href={`collections/${id}`}>
-              <CiCircleInfo className="bg-[#2d3a4b] rounded-full cursor-pointer hover:scale-[1.1] duration-300" />
-            </Link>
-            <div>
-              <CiCirclePlus className="bg-[#2d3a4b] rounded-full  hover:scale-[1.1] duration-300 cursor-pointer" />
-            </div>
-          </div>
         </div>
 
         <div className=" flex gap-4 justify-center items-center ">
@@ -38,7 +70,7 @@ function ProductCard({ id, image, title, price, description, active }) {
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 

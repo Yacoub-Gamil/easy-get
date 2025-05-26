@@ -15,16 +15,17 @@ function Header() {
         y: -100,
       },
       {
-        delay: 2.5,
+        delay: 2,
+        opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
       }
     );
   }, []);
   return (
     <header
       id="header"
-      className=" container sticky top-0 bg-white z-50 mx-auto p-6"
+      className=" container sticky opacity-0 top-0 bg-white z-50 mx-auto p-6"
     >
       <div className=" flex justify-between items-center">
         <Logo />

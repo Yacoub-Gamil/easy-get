@@ -4,21 +4,6 @@ import Image from "next/image";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Link from "next/link";
 
-const images = [
-  {
-    src: "/heroImage-1.jpg",
-  },
-  {
-    src: "/heroImage-2.jpg",
-  },
-  {
-    src: "/heroImage-3.jpg",
-  },
-  {
-    src: "/heroImage-4.jpg",
-  },
-];
-
 function HeroImages() {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
@@ -37,7 +22,7 @@ function HeroImages() {
       stagger: {
         each: 0.5,
       },
-      duration: 0.8,
+      duration: 0.5,
     });
   });
   return (
@@ -62,12 +47,15 @@ function HeroImages() {
               className=" object-cover group-hover:scale-[1.1] duration-400"
             />
             <div className="absolute uppercase text-center">
-              <h1 className=" text-4xl text-[#2d3a4b] font-semibold">
+              <h1 className=" text-4xl text-[#2d3a4b] font-semibold mb-8">
                 Leather bag
               </h1>
-              <button className=" cursor-pointer uppercase py-2 px-4 mt-6 bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white">
+              <Link
+                href={"/collections?category=men%27s+clothing"}
+                className=" cursor-pointer uppercase py-2 px-4  bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white"
+              >
                 more
-              </button>
+              </Link>
             </div>
           </div>
           <div
@@ -81,12 +69,15 @@ function HeroImages() {
               className=" object-cover group-hover:scale-[1.1] duration-400   "
             />
             <div className="absolute uppercase text-center">
-              <h1 className=" text-4xl text-[#2d3a4b] font-semibold">
+              <h1 className=" text-4xl text-[#2d3a4b] font-semibold mb-8">
                 graphiti tshirt
               </h1>
-              <button className=" cursor-pointer uppercase py-2 px-4 mt-6 bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white">
+              <Link
+                href={"/collections?category=men%27s+clothing"}
+                className=" cursor-pointer uppercase py-2 px-6 bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white"
+              >
                 more
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -103,12 +94,15 @@ function HeroImages() {
               className=" object-cover group-hover:scale-[1.1]  duration-400   "
             />
             <div className="absolute uppercase text-center">
-              <h1 className=" text-4xl text-[#2d3a4b] font-semibold">
+              <h1 className=" text-4xl text-[#2d3a4b] font-semibold mb-8">
                 accessories
               </h1>
-              <button className=" cursor-pointer uppercase py-2 px-4 mt-6 bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white">
+              <Link
+                href={"/collections?category=jewelery"}
+                className="  cursor-pointer uppercase py-2 px-4  bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white"
+              >
                 more
-              </button>
+              </Link>
             </div>
           </div>
           <div
@@ -122,19 +116,22 @@ function HeroImages() {
               className=" object-cover group-hover:scale-[1.1] duration-400 "
             />
             <div className="absolute uppercase text-center">
-              <h1 className=" text-4xl text-[#2d3a4b] font-semibold">
+              <h1 className=" text-4xl text-[#2d3a4b] font-semibold mb-8">
                 female tshirt
               </h1>
-              <button className=" cursor-pointer uppercase py-2 px-4 mt-6 bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white">
+              <Link
+                href={"/collections?category=women%27s+clothing"}
+                className=" cursor-pointer uppercase py-2 px-4  bg-[#2d3a4b] hover:scale-[1.1]  duration-300 text-white"
+              >
                 more
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className=" group relative w-fit overflow-hidden mx-auto py-2 px-4 ">
         <Link
-          href={"/"}
+          href={"/collections"}
           className="w-full uppercase border hover:bg-[#2d3a4b] duration-300 hover:text-white  border-[#2d3a4b] py-2 px-4 "
         >
           show more

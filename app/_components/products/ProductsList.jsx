@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Filter from "./Filter";
 import ProductCard from "./ProductCard";
 
@@ -10,15 +11,13 @@ async function ProductsList({ active }) {
   );
 
   return (
-    <div className="p-4">
+    <div className="p-4 relative ">
       <div className=" flex flex-col gap-8 justify-center items-center">
-        <h1 className=" text-center mt-[6rem] mb-[2rem] font-semibold uppercase text-[#2d3a4b] text-4xl">
-          We make you awesome
-        </h1>
         <div className=" mb-[4rem]">
           <Filter />
         </div>
       </div>
+
       <div className=" grid lg:grid-cols-4 lg:max-w-[80%] mx-auto place-items-center gap-[4rem] p-4">
         {productAfterFilter?.map((product) => (
           <ProductCard

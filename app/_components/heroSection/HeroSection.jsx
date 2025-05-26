@@ -5,6 +5,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import HeroImages from "./HeroImages";
 import PopularProducts from "./PopularProducts";
+import Link from "next/link";
 
 function HeroSection() {
   useGSAP(() => {
@@ -16,7 +17,7 @@ function HeroSection() {
       {
         opacity: 1,
         delay: 1,
-        duration: 1,
+        duration: 0.5,
       }
     );
     gsap.fromTo(
@@ -26,7 +27,7 @@ function HeroSection() {
         y: 50,
       },
       {
-        duration: 1,
+        duration: 0.5,
         delay: 2,
         opacity: 1,
         y: 0,
@@ -38,7 +39,7 @@ function HeroSection() {
         opacity: 0,
       },
       {
-        delay: 3,
+        delay: 2.5,
         duration: 0.5,
         opacity: 1,
       }
@@ -67,10 +68,14 @@ function HeroSection() {
               look hot with style
             </h1>
             <div className=" flex justify-end">
-              <button className=" md:text-xl font-semibold hover:bg-[#2d3a4b] hover:text-white duration-300 uppercase border border-[#2d3a4b] py-2 px-4 rounded-3xl cursor-pointer mt-[1.2rem]">
+              <Link
+                href={"/collections"}
+                className=" md:text-xl font-semibold hover:bg-[#2d3a4b] hover:text-white duration-300 uppercase border border-[#2d3a4b] py-2 px-4 rounded-3xl cursor-pointer mt-[1.2rem]"
+              >
                 Shop Now
-              </button>
+              </Link>
             </div>
+            <div className=" hidden xl:block w-[2px] h-[150%]  bg-[#2d3a4b] absolute top-[-30%]  left-1/2 -translate-x-1/2 rotate-60 "></div>
           </div>
           <div className="">
             <Image src={"/hero-bg-3.jpg"} alt="" fill className="" />

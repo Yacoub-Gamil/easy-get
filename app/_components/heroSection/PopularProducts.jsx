@@ -40,19 +40,23 @@ function PopularProducts({ image, category }) {
       </div>
       <div className=" grid grid-cols-2 md:grid-cols-4 max-w-[80%] mx-auto mt-8 gap-4">
         {linksAndImages.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            className=" hover:scale-[1.1] duration-300"
-          >
+          <div key={link.name} className=" hover:scale-[1.1] duration-300">
             <div href={link.href} className=" relative aspect-square">
               <Image src={link.src} alt="" fill className="  object-contain" />
             </div>
             <h1 className=" text-center font-semibold text-2xl uppercase mt-2">
               {link.name}
             </h1>
-          </Link>
+          </div>
         ))}
+      </div>
+      <div className="w-full mt-10 text-center">
+        <Link
+          href={"/collections"}
+          className="w-full uppercase border hover:bg-[#2d3a4b] duration-300 hover:text-white  border-[#2d3a4b] py-2 px-4 "
+        >
+          go check
+        </Link>
       </div>
     </section>
   );
