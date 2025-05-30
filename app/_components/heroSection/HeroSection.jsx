@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import HeroImages from "./HeroImages";
-import PopularProducts from "./PopularProducts";
 import Link from "next/link";
 
 function HeroSection() {
@@ -77,8 +76,16 @@ function HeroSection() {
             </div>
             <div className=" hidden xl:block w-[2px] h-[150%]  bg-[#2d3a4b] absolute top-[-30%]  left-1/2 -translate-x-1/2 rotate-60 "></div>
           </div>
-          <div className="">
-            <Image src={"/hero-bg-3.jpg"} alt="" fill className="" />
+          <div className=" relative w-full lg:h-[90vh] h-[60vh]">
+            <Image
+              src={"/hero-bg-3.jpg"}
+              alt=""
+              quality={100}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+              priority
+              className=""
+            />
           </div>
         </div>
       </section>

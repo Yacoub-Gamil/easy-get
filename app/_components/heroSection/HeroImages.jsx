@@ -44,6 +44,7 @@ function HeroImages() {
               src={"/heroImage-1.jpg"}
               alt=""
               fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               className=" object-cover group-hover:scale-[1.1] duration-400"
             />
             <div className="absolute uppercase text-center">
@@ -66,7 +67,9 @@ function HeroImages() {
               src={"/heroImage-3.jpg"}
               alt=""
               fill
-              className=" object-cover group-hover:scale-[1.1] duration-400   "
+              
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+              className=" object-cover group-hover:scale-[1.1] duration-400"
             />
             <div className="absolute uppercase text-center">
               <h1 className=" text-4xl text-[#2d3a4b] font-semibold mb-8">
@@ -91,6 +94,7 @@ function HeroImages() {
               src={"/heroImage-2.jpg"}
               alt=""
               fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               className=" object-cover group-hover:scale-[1.1]  duration-400   "
             />
             <div className="absolute uppercase text-center">
@@ -113,6 +117,7 @@ function HeroImages() {
               src={"/heroImage-4.jpg"}
               alt=""
               fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               className=" object-cover group-hover:scale-[1.1] duration-400 "
             />
             <div className="absolute uppercase text-center">

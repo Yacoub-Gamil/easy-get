@@ -15,6 +15,10 @@ const links = [
     name: "collection",
     href: "/collections",
   },
+  {
+    name: "contact us",
+    href: "/contact",
+  },
 ];
 
 function NavBar() {

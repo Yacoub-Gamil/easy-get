@@ -10,7 +10,8 @@ const navLinks = [
   { name: "home", href: "/" },
   { name: "about", href: "/about" },
   { name: "collections", href: "/collections" },
-  { name: "contact us", href: "/contact-us" },
+  { name: "cart", href: "/cart" },
+  { name: "contact us", href: "/contact" },
 ];
 function MenuNav() {
   const [isOpen, setIsOpen] = useState(false);

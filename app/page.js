@@ -5,7 +5,6 @@ async function page() {
   return (
     <div>
       <HeroSection />
-
       <PopularProducts />
     </div>
   );

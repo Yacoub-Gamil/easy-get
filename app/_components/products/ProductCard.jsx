@@ -58,6 +58,7 @@ function ProductCard({ id, image, title, price, description, active }) {
             src={image}
             alt="Eastpak Padded Pak'R Backpack"
             fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
             className=" rounded-lg object-contain"
           />
         </div>

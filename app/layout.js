@@ -1,7 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header/Header";
 import Footer from "./_components/Footer";
+import { CartContextProvider } from "./_context/CartContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,9 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Header />
-        <main className=" container mx-auto">{children}</main>
-        <Footer />
+        <CartContextProvider>
+          <Header />
+          <main className=" container mx-auto">{children}</main>
+          <Footer />
+        </CartContextProvider>
       </body>
     </html>
   );
