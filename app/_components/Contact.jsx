@@ -30,7 +30,7 @@ function Contact() {
         <div className="">
           <Logo />
         </div>
-        <div className=" flex gap-4 w-full p-4 ">
+        <div className=" md:flex gap-4 w-full p-4 ">
           <div className=" flex flex-col gap-2 w-full ">
             <label htmlFor="firstName" className=" block font-semibold">
               First Name

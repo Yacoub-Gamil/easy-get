@@ -9,8 +9,8 @@ function IconCart() {
   return (
     <Link href={"/cart"} className=" relative ">
       <PiShoppingCartSimpleThin className="text-xl md:text-2xl" />
-      <p className="absolute top-[-1rem] flex items-center justify-center left-[1rem] w-4 h-4 text-white rounded-xl md:h-5 md:w-5 bg-red-600">
-        <span className="md:text-xl">{items.length}</span>
+      <p className="absolute top-[-1rem] flex items-center justify-center left-[1rem] w-4 h-4 text-white rounded-xl md:h-4 md:w-4 bg-red-600">
+        <span className="md:text-xs">{items.length}</span>
       </p>
     </Link>
   );

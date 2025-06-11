@@ -59,8 +59,8 @@ function Cart() {
         <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold ">
           Your Cart
         </h1>
-        <p className=" text-center max-w-[60%] md:text-xl lg:text-[1.2rem]">
-          Review your selected items below <br /> before proceeding to checkout.
+        <p className=" text-center max-w-[80%] md:text-xl lg:text-[1.2rem]">
+          Review your selected items below before proceeding to checkout.
           make sure everything looks good!
         </p>
       </div>
