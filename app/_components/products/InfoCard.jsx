@@ -1,5 +1,6 @@
 "use client";
 
+import { useCartContext } from "@/app/_context/CartContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
@@ -7,7 +8,8 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
-function InfoCard({ image, price, title, description }) {
+function InfoCard({ id, image, price, title, description }) {
+  const { dispatch } = useCartContext();
   const router = useRouter();
   const infoCard = useRef(null);
   const [leaving, setIsLeaving] = useState(false);
@@ -43,7 +45,7 @@ function InfoCard({ image, price, title, description }) {
   }, []);
 
   return (
-    <div ref={infoCard} className="p-4 h-screen  flex flex-col justify-center ">
+    <div ref={infoCard} className="p-4 h-screen flex flex-col justify-center ">
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div className=" relative w-[70%] md:w-[40%]  aspect-square">
           <Image
@@ -59,14 +61,22 @@ function InfoCard({ image, price, title, description }) {
           <h1 className=" font-bold md:text-2xl">{title}</h1>
           <p className=" text-xl opacity-60 ">{description}</p>
           <div className="w-[60%]">
-            <button className=" w-full cursor-pointer capitalize px-4 py-2 bg-red-600  mt-8 text-white rounded-full ">
+            <button
+              onClick={() => {
+                dispatch({
+                  type: "addProduct",
+                  payload: { id, image, price, title },
+                });
+              }}
+              className=" w-full cursor-pointer capitalize px-4 py-2 bg-red-600  mt-8 text-white rounded-full "
+            >
               add to cart
             </button>
             <button
               onClick={handleIsleaving}
               className="  text-xl cursor-pointer  capitalize mt-8 text-red-600 rounded-full flex  items-center gap-2"
             >
-              <IoIosArrowRoundBack className=" " /> back shoping
+              <IoIosArrowRoundBack className="" /> back shoping
             </button>
           </div>
         </div>

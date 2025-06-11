@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import UserInfo from "./UserInfo";
 import gsap from "gsap";
 import MenuNav from "./MenuNav";
+import IconCart from "../cart/IconCart";
 
 function Header() {
   useGSAP(() => {
@@ -33,7 +34,8 @@ function Header() {
           <div className=" hidden md:block">
             <NavBar />
           </div>
-          <div className=" md:hidden ">
+          <div className=" md:hidden flex items-center gap-5 ">
+            <IconCart />
             <MenuNav />
           </div>
         </div>

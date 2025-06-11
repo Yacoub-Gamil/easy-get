@@ -1,38 +1,29 @@
 "use client";
 const { createContext, useContext, useReducer } = require("react");
 
-const iniatilState = [
-  {
-    id: 1,
-    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  },
-];
+const iniatilState = [];
 
 const CartContext = createContext();
 
 function addProductToCart(state, action) {
   switch (action.type) {
     case "addProduct":
-      return [...state, action.playload];
-
+      return [...state, action.payload];
+    case "removeProduct":
+      console.log(action.payload);
+      return [...state.filter((product) => product.id !== action.payload)];
     default:
-      break;
+      throw new Error("method not found");
   }
 }
 
 function CartContextProvider({ children }) {
   const [items, dispatch] = useReducer(addProductToCart, iniatilState);
+  const getTotalPrice = items?.map((el) => el.price);
+  const totalPrice = getTotalPrice.reduce((acc, cur) => acc + cur, 0);
+
   return (
-    <CartContext.Provider value={{ items, dispatch }}>
+    <CartContext.Provider value={{ items, totalPrice, dispatch }}>
       {children}
     </CartContext.Provider>
   );

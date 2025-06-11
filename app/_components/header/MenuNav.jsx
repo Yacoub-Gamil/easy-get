@@ -62,7 +62,7 @@ function MenuNav() {
         id="navMenu"
         className=" left-0 hidden h-[calc(100vh-65px)] top-[4rem] p-4 w-0 bg-white absolute"
       >
-        <div className=" flex justify-center items-center h-full  ">
+        <div className=" flex justify-center items-center h-full ">
           <div
             id="links"
             className=" flex flex-col scale-0 opacity-0 items-center justify-center gap-8 capitalize text-2xl"
@@ -74,7 +74,7 @@ function MenuNav() {
                 onClick={() => setIsOpen(false)}
                 className={`${
                   pathName === link.href
-                    ? " py-2 px-4 border-b bg-[#e9654c] text-white"
+                    ? " py-2 px-4 border-b bg-[#2d3a4b] text-white"
                     : ""
                 }`}
               >

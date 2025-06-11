@@ -34,7 +34,7 @@ function Filter() {
 
   return (
     <div ref={filter}>
-      <h1 className=" italic text-center mt-[4rem] md:mt-[6rem] mb-[4rem] font-bold uppercase text-[#2d3a4b] text-2xl lg:text-4xl">
+      <h1 className=" italic text-center mt-[2rem] md:mt-[2rem] mb-[2rem] font-bold uppercase text-[#2d3a4b] text-2xl lg:text-4xl">
         We make you awesome
       </h1>
       <div className=" text-[0.8rem] sm:text-xl flex bg-stone-50 rounded-full p-1 justify-between">
