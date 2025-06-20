@@ -7,13 +7,10 @@ import IconCart from "../cart/IconCart";
 function UserInfo() {
   return (
     <div className=" flex gap-4 text-xl md:text-2xl">
-      <IconCart />
       <Link href={""}>
         <LiaUser />
       </Link>
-      <Link href={""}>
-        <CiSettings />
-      </Link>
+      <IconCart />
     </div>
   );
 }

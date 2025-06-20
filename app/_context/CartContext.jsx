@@ -32,7 +32,7 @@ function CartContextProvider({ children }) {
 function useCartContext() {
   const uesCart = useContext(CartContext);
   if (uesCart === "undfined")
-    throw new Error("You are useing the cart context out the provider");
+    throw new Error("You are useing the cart context outside the provider");
   return uesCart;
 }
 

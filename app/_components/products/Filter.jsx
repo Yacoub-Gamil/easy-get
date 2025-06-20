@@ -34,16 +34,16 @@ function Filter() {
 
   return (
     <div ref={filter}>
-      <h1 className=" italic text-center mt-[2rem] md:mt-[2rem] mb-[2rem] font-bold uppercase text-[#2d3a4b] text-2xl lg:text-4xl">
+      <h1 className=" italic text-center mt-[2rem] md:mt-[2rem] mb-[2rem] font-bold uppercase text-[#2d3a4b] text-2xl lg:text-3xl">
         We make you awesome
       </h1>
-      <div className=" text-[0.8rem] sm:text-xl flex bg-stone-50 rounded-full p-1 justify-between">
+      <div className=" text-[0.8rem] sm:text-[1rem] font-semibold flex bg-stone-50 rounded-full p-1 justify-between">
         <button
           className={`${
             aciveFilter === "all"
               ? " bg-[#2d3a4b] text-white shadow-xl duration-300 "
               : ""
-          } py-2 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize  `}
+          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize  `}
           onClick={() => handleFilter("all")}
         >
           All
@@ -53,7 +53,7 @@ function Filter() {
             aciveFilter === "women's clothing"
               ? "bg-[#2d3a4b] text-white active:bg-amber-300 shadow-xl duration-300 "
               : ""
-          } py-2 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("women's-clothing")}
         >
           women
@@ -64,7 +64,7 @@ function Filter() {
             aciveFilter === "men's clothing"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300  "
               : ""
-          } py-2 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("men's-clothing")}
         >
           men
@@ -74,7 +74,7 @@ function Filter() {
             aciveFilter === "jewelery"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300 "
               : ""
-          } py-2 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("jewelery")}
         >
           jewelery
@@ -84,7 +84,7 @@ function Filter() {
             aciveFilter === "electronics"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300 "
               : ""
-          } py-2 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("electronics")}
         >
           {" "}

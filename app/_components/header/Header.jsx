@@ -23,12 +23,13 @@ function Header() {
       }
     );
   }, []);
+  
   return (
     <header
       id="header"
       className=" container sticky opacity-0 top-0 bg-white z-50 mx-auto p-6"
     >
-      <div className=" flex justify-between items-center">
+      <div className=" max-w-[90%] mx-auto flex justify-between items-center">
         <Logo />
         <div>
           <div className=" hidden md:block">

@@ -13,6 +13,7 @@ function Contact() {
       y: -50,
     });
   }, []);
+  
   return (
     <div
       id="contact"
