@@ -23,20 +23,20 @@ function Header() {
       }
     );
   }, []);
-  
+
   return (
     <header
       id="header"
       className=" container sticky opacity-0 top-0 bg-white z-50 mx-auto p-6"
     >
-      <div className=" max-w-[90%] mx-auto flex justify-between items-center">
+      <div className=" md:max-w-[80%] mx-auto flex justify-between items-center">
         <Logo />
         <div>
           <div className=" hidden md:block">
             <NavBar />
           </div>
-          <div className=" md:hidden flex items-center gap-5 ">
-            <IconCart />
+          <div className=" md:hidden flex items-center gap-4 ">
+            <UserInfo />
             <MenuNav />
           </div>
         </div>

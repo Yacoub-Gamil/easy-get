@@ -1,14 +1,18 @@
 "use client";
 
 import { useCartContext } from "@/app/_context/CartContext";
+import { authOptions } from "@/app/_lib/nextAuth";
+import { signIn, useSession } from "next-auth/react";
 
 function Payment() {
   const { totalPrice } = useCartContext();
   const estimatedTaxes = totalPrice * 0.14;
   const price = totalPrice + estimatedTaxes;
 
+  const { data } = useSession(authOptions);
+
   return (
-    <div className=" w-full sticky top-[15rem] z-40">
+    <div className=" sticky top-[15rem] z-40">
       <div className=" mt-4 p-4 flex flex-col gap-4 border-[0.1px] rounded-2xl w-[100%]">
         <h1 className="text-xl font-bold text-[#2d3a4b]">Summary</h1>
         <p className="flex  justify-between">
@@ -18,7 +22,8 @@ function Payment() {
           </strong>
         </p>
         <p className="flex justify-between capitalize">
-          estimated delivery and handling: <span>Free</span>
+          estimated delivery and handling:{" "}
+          <span className=" underline font-semibold">Free</span>
         </p>
         <p className="flex justify-between capitalize">
           estimated taxes:
@@ -28,9 +33,20 @@ function Payment() {
           <strong>Total:</strong>
           <strong className=" text-red-600">${price.toFixed(2)}</strong>
         </div>
-        <button className=" bg-black text-white p-2 rounded-2xl">
-          checkout
-        </button>
+        {data?.user.name ? (
+          <button className=" cursor-pointer bg-black text-white p-2 rounded-2xl">
+            checkout
+          </button>
+        ) : (
+          <div className=" w-full flex justify-center">
+            <button
+              onClick={() => signIn()}
+              className=" bg-[#2d3a4b] text-white text-[0.9rem] rounded-xs hover:scale-[1.1] duration-300 cursor-pointer w-fit px-2 py-1 "
+            >
+              Please login to checkout
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

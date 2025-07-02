@@ -52,7 +52,7 @@ function About() {
               We craft awesome stuff with great experiences
             </p>
           </div>
-          <div className=" flex gap-4 flex-col max-w-[40%]">
+          <div className=" flex gap-4 flex-col lg:max-w-[40%]">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               volutpat dui at lacus aliquet, a consequat enim aliquet. Integer

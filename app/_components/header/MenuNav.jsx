@@ -52,9 +52,9 @@ function MenuNav() {
         className=" cursor-pointer"
       >
         {!isOpen ? (
-          <MdMenu className=" text-2xl " />
+          <MdMenu className=" text-xl " />
         ) : (
-          <MdMenu className=" text-2xl" />
+          <MdMenu className=" text-xl" />
         )}
       </div>
 

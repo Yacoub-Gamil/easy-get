@@ -34,8 +34,11 @@ function Filter() {
 
   return (
     <div ref={filter}>
-      <h1 className=" italic text-center mt-[2rem] md:mt-[2rem] mb-[2rem] font-bold uppercase text-[#2d3a4b] text-2xl lg:text-3xl">
-        We make you awesome
+      <h1 className=" text-center md:mt-[2rem] mb-[3rem] font-bold capitalize text-[#2d3a4b] text-2xl">
+        We make you{" "}
+        <span className=" bg-red-600 px-2 italic uppercase text-white">
+          awesome
+        </span>
       </h1>
       <div className=" text-[0.8rem] sm:text-[1rem] font-semibold flex bg-stone-50 rounded-full p-1 justify-between">
         <button

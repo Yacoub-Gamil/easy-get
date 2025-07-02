@@ -13,11 +13,11 @@ function Contact() {
       y: -50,
     });
   }, []);
-  
+
   return (
     <div
       id="contact"
-      className=" md:flex xl:w-[70%]  rounded-2xl overflow-hidden"
+      className=" w-[95%] md:flex xl:w-[70%] rounded-2xl overflow-hidden"
     >
       <div className="md:w-[40%] md:h-[35rem] relative aspect-square ">
         <Image src={"/contact-us.jpg"} alt="" fill className=" object-cover" />

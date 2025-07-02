@@ -7,13 +7,14 @@ const links = [
     name: "home",
     href: "/",
   },
-  {
-    name: "about",
-    href: "/about",
-  },
+
   {
     name: "collections",
     href: "/collections",
+  },
+  {
+    name: "about",
+    href: "/about",
   },
   {
     name: "contact us",
@@ -25,7 +26,7 @@ function NavBar() {
   const pathName = usePathname();
 
   return (
-    <div className=" flex gap-4 md:text-[0.8rem] lg:text-[1rem] font-semibold text-[#2d3a4b] capitalize">
+    <div className=" flex gap-2 md:text-[0.8rem] lg:text-[0.9rem] font-semibold text-[#2d3a4b] capitalize">
       {links.map((link) => (
         <Link
           key={link.name}

@@ -10,7 +10,6 @@ function addProductToCart(state, action) {
     case "addProduct":
       return [...state, action.payload];
     case "removeProduct":
-      console.log(action.payload);
       return [...state.filter((product) => product.id !== action.payload)];
     default:
       throw new Error("method not found");

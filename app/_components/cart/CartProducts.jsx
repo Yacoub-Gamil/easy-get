@@ -29,7 +29,7 @@ function CartProducts() {
         <div
           key={product.id}
           ref={(el) => (cardsRef.current[index] = el)}
-          className="grid grid-cols-2 place-items-center gap-8 mb-2 relative"
+          className="grid grid-cols-2 place-items-center gap-4 mb-2 relative"
         >
           <div className="relative aspect-square h-[10rem] lg:h-[15rem]">
             <Image
@@ -41,13 +41,13 @@ function CartProducts() {
             />
           </div>
           <div className="flex flex-col items-center gap-4 ">
-            <h1 className="font-semibold md:text-xl">
+            <h1 className="font-semibold md:text-[1rem]">
               {product.title.slice(0, 50)}
             </h1>
             <strong className="text-red-600 text-xl">${product.price}</strong>
             <p className="opacity-80">{product.description?.slice(0, 50)}</p>
           </div>
-          <div className=" absolute bottom-0 right-[4rem]">
+          <div className=" absolute bottom-[-1rem] right-0  md:right-[4rem]">
             <button
               onClick={() => onRemoveProduct(product.id, index)}
               className="cursor-pointer text-red-600 border-b"

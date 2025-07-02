@@ -4,7 +4,6 @@ import { useCartContext } from "@/app/_context/CartContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { useRef, useState } from "react";
@@ -49,20 +48,16 @@ function ProductCard({ id, image, title, price, description }) {
   }, []);
 
   return (
-    <div ref={item} className=" w-full relative cursor-pointer ">
+    <div ref={item} className="relative cursor-pointer ">
       <div
         onClick={handleNavigation}
-        className={` group relative flex flex-col justify-center gap-4 h-[20rem] `}
+        className={` group relative hover:scale-[1.1] duration-150 flex flex-col justify-center gap-4 h-[20rem] `}
       >
         {isAdded && (
-          <div className="bg-stone-600/5 w-full rounded-2xl h-full flex justify-center items-center absolute z-40">
-            <p className="opacity-100 bg-white font-semibold rounded-xl px-4 p-2 text-red-600 ">
-              Added To Cart
-            </p>
-          </div>
+          <div className="bg-stone-600/5 w-full rounded-2xl h-full flex justify-center items-center absolute z-40" />
         )}
 
-        <div className="relative aspect-square rounded-2xl overflow-hidden">
+        <div className="relative w-[10rem] mx-auto  aspect-square rounded-2xl overflow-hidden">
           <Image
             src={image}
             alt="Eastpak Padded Pak'R Backpack"
@@ -71,15 +66,15 @@ function ProductCard({ id, image, title, price, description }) {
             className=" rounded-lg object-contain"
           />
         </div>
-        <div className=" flex gap-4 justify-center items-center ">
+        <div className=" p-2 flex gap-4 justify-center items-center ">
           <strong className="  text-red-600">${price}</strong>
           <div className=" w-[1px] h-[5rem] bg-black" />
           <div className=" text-[#2d3a4b]">
-            <h1 className=" font-semibold">{title}</h1>
+            <h1 className=" opacity-90 text-[0.9rem]">{title}</h1>
           </div>
         </div>
       </div>
-      <div className="  flex justify-center mt-4 ">
+      <div className="flex justify-center mt-4 ">
         {!isAdded ? (
           <button
             onClick={() =>
@@ -88,7 +83,7 @@ function ProductCard({ id, image, title, price, description }) {
                 payload: { id, image, price, title },
               })
             }
-            className=" cursor-pointer capitalize w-full rounded-xl bg-[#2d3a4b] text-[1rem] text-white py-1 px-2 font-semibold "
+            className=" cursor-pointer capitalize w-[70%] rounded-xl bg-[#2d3a4b] text-[0.8rem] text-white py-1 px-2 font-semibold "
           >
             add to cart
           </button>
@@ -100,7 +95,7 @@ function ProductCard({ id, image, title, price, description }) {
                 payload: id,
               })
             }
-            className=" cursor-pointer capitalize w-full rounded-xl bg-red-600 text-[1rem] text-white py-1 px-2 font-semibold "
+            className=" cursor-pointer capitalize w-[70%] rounded-xl bg-red-600 text-[0.8rem] text-white py-1 px-2 font-semibold "
           >
             remove
           </button>
