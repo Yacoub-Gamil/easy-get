@@ -4,8 +4,9 @@ import { useCartContext } from "@/app/_context/CartContext";
 import { authOptions } from "@/app/_lib/nextAuth";
 import { signIn, useSession } from "next-auth/react";
 
+
 function Payment() {
-  const { totalPrice } = useCartContext();
+  const { totalPrice, setIsCheckout } = useCartContext();
   const estimatedTaxes = totalPrice * 0.14;
   const price = totalPrice + estimatedTaxes;
 
@@ -34,7 +35,10 @@ function Payment() {
           <strong className=" text-red-600">${price.toFixed(2)}</strong>
         </div>
         {data?.user.name ? (
-          <button className=" cursor-pointer bg-black text-white p-2 rounded-2xl">
+          <button
+            onClick={() => setIsCheckout(true)}
+            className=" w-[80%] mx-auto capitalize cursor-pointer bg-[#2d3a4b] text-white p-1 hover:rounded-tl-2xl hover:rounded-br-2xl duration-150"
+          >
             checkout
           </button>
         ) : (

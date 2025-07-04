@@ -6,11 +6,23 @@ import { FaTruckArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 function Cart() {
-  const { items } = useCartContext();
+  const { dispatch, items, isCheckout, setIsCheckout } = useCartContext();
   const refCart = useRef(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsCheckout(false); // Hide the message after 3 seconds
+      dispatch({ type: "checkedout" });
+      router.push("/");
+    }, 4000);
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, [isCheckout]);
 
   useGSAP(() => {
     if (items.length === 0) {
@@ -54,10 +66,10 @@ function Cart() {
       </div>
     </div>
   ) : (
-    <section ref={refCart} className="mt-8">
+    <section ref={refCart} className="mt-8 w-full">
       <div className=" flex flex-col items-center justify-center gap-4 text-[#2d3a4b]">
-        <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold ">
-          You<span className=" text-red-600 italic">r Cart</span>
+        <h1 className=" text-3xl md:text-4xl font-bold ">
+          Your <span className=" text-red-600 italic">Cart</span>
         </h1>
         <p className=" text-center max-w-[80%] md:text-xl lg:text-[1.2rem]">
           Review your selected items below before <br /> proceeding to checkout.
@@ -74,6 +86,14 @@ function Cart() {
           <Payment />
         </div>
       </div>
+      {isCheckout && (
+        <div className="w-full h-full z-40 bg-white opacity-90 absolute top-0 flex flex-col justify-center items-center">
+          <h1 className=" text-2xl mb-8 font-bold">
+            We appreciate your purchase — thank you!
+          </h1>
+          <span className=" text-lg font-semibold">Processing Checkout...</span>
+        </div>
+      )}
     </section>
   );
 }

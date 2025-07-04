@@ -40,13 +40,13 @@ function Filter() {
           awesome
         </span>
       </h1>
-      <div className=" text-[0.8rem] sm:text-[1rem] font-semibold flex bg-stone-50 rounded-full p-1 justify-between">
+      <div className=" text-[0.8rem] gap-1 sm:text-[1rem] font-semibold bg-stone-50 rounded-bl-2xl rounded-tr-2xl flex -2xl p-1 justify-between">
         <button
           className={`${
             aciveFilter === "all"
               ? " bg-[#2d3a4b] text-white shadow-xl duration-300 "
-              : ""
-          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize  `}
+              : " hover:bg-[#2d3a4b] hover:text-white duration-150 hover:rounded-xs"
+          } py-1 px-3  lg:px-6 rounded-tl-2xl rounded-br-2xl cursor-pointer capitalize  `}
           onClick={() => handleFilter("all")}
         >
           All
@@ -55,8 +55,8 @@ function Filter() {
           className={`${
             aciveFilter === "women's clothing"
               ? "bg-[#2d3a4b] text-white active:bg-amber-300 shadow-xl duration-300 "
-              : ""
-          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+              : " hover:bg-[#2d3a4b] hover:text-white duration-150 hover:rounded-xs"
+          } py-1 px-3  lg:px-6 rounded-tl-2xl rounded-br-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("women's-clothing")}
         >
           women
@@ -66,8 +66,8 @@ function Filter() {
           className={`${
             aciveFilter === "men's clothing"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300  "
-              : ""
-          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+              : " hover:bg-[#2d3a4b] hover:text-white duration-150 hover:rounded-xs"
+          } py-1 px-3  lg:px-6 rounded-tl-2xl rounded-br-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("men's-clothing")}
         >
           men
@@ -76,8 +76,8 @@ function Filter() {
           className={`${
             aciveFilter === "jewelery"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300 "
-              : ""
-          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+              : " hover:bg-[#2d3a4b] hover:text-white duration-150 hover:rounded-xs"
+          } py-1 px-3  lg:px-6 rounded-tl-2xl rounded-br-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("jewelery")}
         >
           jewelery
@@ -86,8 +86,8 @@ function Filter() {
           className={`${
             aciveFilter === "electronics"
               ? "bg-[#2d3a4b] text-white shadow-xl duration-300 "
-              : ""
-          } py-1 px-3  lg:px-6  rounded-2xl cursor-pointer capitalize `}
+              : " hover:bg-[#2d3a4b] hover:text-white duration-150 hover:rounded-xs"
+          } py-1 px-3  lg:px-6 rounded-tl-2xl rounded-br-2xl cursor-pointer capitalize `}
           onClick={() => handleFilter("electronics")}
         >
           {" "}

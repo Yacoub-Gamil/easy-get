@@ -83,7 +83,7 @@ function ProductCard({ id, image, title, price, description }) {
                 payload: { id, image, price, title },
               })
             }
-            className=" cursor-pointer capitalize w-[70%] rounded-xl bg-[#2d3a4b] text-[0.8rem] text-white py-1 px-2 font-semibold "
+            className=" cursor-pointer capitalize w-[70%] bg-[#2d3a4b] text-[0.8rem] text-white py-1 px-2 font-semibold "
           >
             add to cart
           </button>
@@ -95,7 +95,7 @@ function ProductCard({ id, image, title, price, description }) {
                 payload: id,
               })
             }
-            className=" cursor-pointer capitalize w-[70%] rounded-xl bg-red-600 text-[0.8rem] text-white py-1 px-2 font-semibold "
+            className=" cursor-pointer capitalize w-[70%] rounded-tl-2xl rounded-br-2xl  bg-red-600 text-[0.8rem] text-white py-1 px-2 font-semibold "
           >
             remove
           </button>

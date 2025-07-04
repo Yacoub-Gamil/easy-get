@@ -58,7 +58,7 @@ function HeroSection() {
               The Latest Product from{" "}
               <span
                 id="easy-get"
-                className=" md:text-3xl font-bold text-[#e9654c]"
+                className=" md:text-3xl font-bold text-white bg-red-600 px-2 rounded-tl-2xl rounded-br-2xl"
               >
                 EASY-GET
               </span>

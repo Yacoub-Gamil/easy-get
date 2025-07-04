@@ -49,7 +49,7 @@ function InfoCard({ id, image, price, title, description }) {
   }, []);
 
   return (
-    <div ref={infoCard} className="p-4 h-screen flex flex-col justify-center ">
+    <div ref={infoCard} className="p-4 h-screen flex flex-col mt-[6rem]">
       <div className="flex flex-col md:flex-row justify-center items-center">
         <div className=" relative w-[70%] md:w-[25%] aspect-square">
           <Image

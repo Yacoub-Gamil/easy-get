@@ -33,7 +33,7 @@ function NavBar() {
           href={link.href}
           className={`${
             link.href === pathName
-              ? " duration-300 bg-[#2d3a4b] rounded-xl shadow-2xl text-white"
+              ? " duration-300 bg-[#2d3a4b] rounded-br-2xl rounded-tl-2xl shadow-2xl text-white"
               : ""
           } py-2 px-3 hover:bg-[#2d3a4b] hover:text-white duration-300`}
         >
