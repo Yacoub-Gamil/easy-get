@@ -16,6 +16,7 @@ function Cart() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      if (!isCheckout) return;
       setIsCheckout(false); // Hide the message after 3 seconds
       dispatch({ type: "checkedout" });
       router.push("/");
