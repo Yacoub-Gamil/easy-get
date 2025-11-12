@@ -1,13 +1,10 @@
 "use client";
-
 import { useCartContext } from "@/app/_context/CartContext";
 
 function Payment() {
   const { totalPrice, setIsCheckout } = useCartContext();
   const estimatedTaxes = totalPrice * 0.14;
   const price = totalPrice + estimatedTaxes;
-
-  const { data } = useSession(authOptions);
 
   return (
     <div className=" sticky top-[15rem] z-40">
@@ -31,7 +28,7 @@ function Payment() {
           <strong>Total:</strong>
           <strong className=" text-red-600">${price.toFixed(2)}</strong>
         </div>
-        {data?.user.name ? (
+        {"" ? (
           <button
             onClick={() => setIsCheckout(true)}
             className=" w-[80%] mx-auto capitalize cursor-pointer bg-[#2d3a4b] text-white p-1 hover:rounded-tl-2xl hover:rounded-br-2xl duration-150"

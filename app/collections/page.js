@@ -9,7 +9,7 @@ async function page({ searchParams }) {
   const active = (await searParams?.category) ?? "all";
 
   return (
-    <section className=" relative  mb-[6rem] ">
+    <section className=" relative mb-[6rem] ">
       <ProductsList active={active} />
     </section>
   );
