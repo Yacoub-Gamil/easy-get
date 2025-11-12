@@ -41,7 +41,7 @@ function Header() {
           </div>
         </div>
         <div className=" hidden md:block">
-          <UserInfo />
+          <UserInfo />{" "}
         </div>
       </div>
     </header>

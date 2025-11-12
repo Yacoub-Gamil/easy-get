@@ -1,9 +1,6 @@
 "use client";
 
 import { useCartContext } from "@/app/_context/CartContext";
-import { authOptions } from "@/app/_lib/nextAuth";
-import { signIn, useSession } from "next-auth/react";
-
 
 function Payment() {
   const { totalPrice, setIsCheckout } = useCartContext();
