@@ -1,14 +1,7 @@
 import Filter from "./Filter";
 import ProductCard from "./ProductCard";
 
-async function ProductsList({ active }) {
-  const data = await fetch("https://fakestoreapi.com/products");
-  const products = await data.json();
-  const filter = active.replace("-", " ");
-  const productAfterFilter = products.filter((product) =>
-    filter === "all" ? product : product.category === filter
-  );
-
+async function ProductsList({ data }) {
   return (
     <div className="p-4 relative ">
       <div className=" flex flex-col gap-8 justify-center items-center">
@@ -18,9 +11,9 @@ async function ProductsList({ active }) {
       </div>
 
       <div className=" grid lg:grid-cols-4 lg:max-w-[75%] mx-auto place-items-center gap-[2rem] p-4">
-        {productAfterFilter?.map((product) => (
+        {data?.map((product) => (
           <ProductCard
-            active={productAfterFilter}
+            active={data}
             key={product.id}
             id={product.id}
             title={product.title}
