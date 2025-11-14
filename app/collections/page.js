@@ -9,6 +9,10 @@ async function page({ searchParams }) {
 
   const res = await fetch("https://fakestoreapi.com/products", {
     cache: "no-store",
+    headers: {
+      "User-Agent": "Mozilla/5.0 (compatible; VercelBot/1.0)",
+      Accept: "application/json",
+    },
   });
 
   if (!res.ok) {
