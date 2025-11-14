@@ -5,18 +5,26 @@ export const metadata = {
 };
 
 async function page({ searchParams }) {
-  const searParams = await searchParams;
-  const active = (await searParams?.category) ?? "all";
+  const active = searchParams?.category ?? "all";
 
-  const data = await fetch("https://fakestoreapi.com/products");
-  const products = await data.json();
+  const res = await fetch("https://fakestoreapi.com/products", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    console.error("Failed to fetch:", await res.text());
+    throw new Error("Failed to fetch products");
+  }
+
+  const products = await res.json();
+
   const filter = active.replace("-", " ");
-  const productAfterFilter = products.filter((product) =>
-    filter === "all" ? product : product.category === filter
-  );
+
+  const productAfterFilter =
+    filter === "all" ? products : products.filter((p) => p.category === filter);
 
   return (
-    <section className=" relative mb-[6rem] ">
+    <section className="relative mb-[6rem]">
       <ProductsList active={active} data={productAfterFilter} />
     </section>
   );
